@@ -3,19 +3,167 @@
 <meta charset="UTF-8">
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/male.css"/>
+<link href='https://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet'/>
 <style>
 </style>
-<script src=""></script>
+<script>
+    function overlayOn() {
+        document.getElementById("overlay").style.display = "none";
+    }
+    function overlayOff() {
+        document.getElementById("overlay").style.display = "none";
+    }
+    function register() {
+        document.getElementById("register").style.display = "block";
+        document.getElementById("login").style.display = "none";
+    }
+    function login() {
+        document.getElementById("login").style.display = "block";
+        document.getElementById("register").style.display = "none";
+    }
+</script>
+
 <body>
+    <div id="overlay">
+        <div id="login">
+            <h1>You need to login to view the secrets of the Brotherhood</h1>
+            <form action="login.php" method="post">  
+            <input type="text" name="username" id="username" value="Username"
+                onblur="if(this.value==''){ this.value='Username'; this.style.color='#BBB';}"
+                onfocus="if(this.value=='Username'){ this.value=''; this.style.color='#000';}"
+                style="color:#BBB;"
+            />  
+            <input type="text" name="password" id="password" value="Password"
+                onblur="if(this.value==''){ this.value='Password'; this.style.color='#BBB';}"
+                onfocus="if(this.value=='Password'){ this.value=''; this.style.color='#000';}"
+                style="color:#BBB;"
+            />
+            <!--<input type="text" name="email" id="email" value="Enter your e-mail"
+                onblur="if(this.value==''){ this.value='Enter your e-mail'; this.style.color='#BBB';}"
+                onfocus="if(this.value=='Enter your e-mail'){ this.value=''; this.style.color='#000';}"
+                style="color:#BBB;" 
+            />-->
+            <div class="choice">
+                <a onclick="register()" href="registration.php">I don't have an account yet</a>
+            </div>
+            <!--<div class="choice">
+                <a href="login.php">Login</a>
+            </div>-->
+            </form> 
+        </div>
+        <div id="register">
+            <h1>You need to login to view the secrets of the Brotherhood</h1>
+            <form action="login.php" method="post">  
+            <input type="text" name="username" id="username" value="Username"
+                onblur="if(this.value==''){ this.value='Username'; this.style.color='#BBB';}"
+                onfocus="if(this.value=='Username'){ this.value=''; this.style.color='#000';}"
+                style="color:#BBB;"
+            />
+            <input type="text" name="password" id="password" value="Password"
+                onblur="if(this.value==''){ this.value='Password'; this.style.color='#BBB';}"
+                onfocus="if(this.value=='Password'){ this.value=''; this.style.color='#000';}"
+                style="color:#BBB;"
+            />
+            <input type="text" name="email" id="email" value="Enter your e-mail"
+                onblur="if(this.value==''){ this.value='Enter your e-mail'; this.style.color='#BBB';}"
+                onfocus="if(this.value=='Enter your e-mail'){ this.value=''; this.style.color='#000';}"
+                style="color:#BBB;" 
+            />
+            <div class="choice">
+                <a onclick="login()" href="registration.php">I don't have an account yet</a>
+            </div>
+            <!--<div class="choice">
+                <a href="login.php">Login</a>
+            </div>-->
+            </form> 
+        </div>
+    </div>
+    <ul>
+        <li><a href="#hierarchy">Home</a></li>
+        <li><a href="#alpha">News</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+        <li><a onclick="overlayOn()">Newsletter</a></li>
+    </ul>
+    <section id="home">
+        <h1>THE ALPHA BROTHERHOOD</h1>
+        <p>dsjfjdklfksjmfsmcmsdkmcksmkdmcsmcksdcmemfksdmfkmdkmlk</p>
+    </section>
+    <section id="about">
+        <h1>Who are we?</h1>
+        <p>
+            In today's society, masculinity is under attack. Men. We want to help men return to their 
+            roots and embrace.
+        </p>
+    </section>
+    <section id="hierarchy">
+        <h1>The Brotherhood</h1>
+        <p>This is a paragraph.</p>
+        <hr>
+        <div class="male">
+            <div class="col">
+                <h1>Alpha Male</h1>
+                <p>This is a paragraph.</p>
+            </div>
+            <div class="col">
+                <img src="img/alpha.jpg" alt="LA">
+            </div>
+        </div>
+        <hr>
+        <div class="male">
+            <div class="col">
+                <img src="img/beta.jpg" alt="LA">
+            </div>
+            <div class="col">
+                <h1>Beta Male</h1>
+                <p>This is a paragraph.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="male" id="Sigma">
+            <div class="col">
+                <h1>Sigma Male</h1>
+                <p>This is a paragraph.</p>
+            </div>
+            <div class="col">
+                <img src="img/sigma.jpg" alt="LA">
+            </div>
+        </div>
+    </section>
+    <section class="communication">
+        <div class="col">
+            <h1>Broadcast a message</h1>
+            <p>
+                Anything from news or discussion prompts to advertisements for your own ALPHA MALE 
+                PRODUCTS is allowed.
+            </p>
+            <form action="login.php" id="broadcast" method="post">  
+            <input type="text" name="subject" id="subject" value="Subject"
+                onblur="if(this.value==''){ this.value='Username'; this.style.color='#BBB';}"
+                onfocus="if(this.value=='Username'){ this.value=''; this.style.color='#000';}"
+                style="color:#BBB;"
+            />  
+            </form> 
+            <textarea rows="4" cols="50" name="message" form="broadcast"></textarea>
+        </div>
+        <div class="col">
+            <h1>Send us a question</h1>
+            <p>
+                Do you need personal guidance from the leaders of the Brotherhood? Send us a question in 
+                the form below.
+            </p>
+            <form action="login.php" id="question" method="post">  
+            <input type="text" name="username" id="username" value="Username"
+                onblur="if(this.value==''){ this.value='Username'; this.style.color='#BBB';}"
+                onfocus="if(this.value=='Username'){ this.value=''; this.style.color='#000';}"
+                style="color:#BBB;"
+            />  
+            </form>
+            <textarea rows="4" cols="50" name="message" form="question"></textarea>
+        </div>
 
-<img src="img_la.jpg" alt="LA" style="width:100%">
-
-<div class="">
- <h1>This is a Heading</h1>
- <p>This is a paragraph.</p>
- <p>This is another paragraph.</p>
-</div>
-
+    </section>
+    <footer></footer>
 </body>
 </html>
